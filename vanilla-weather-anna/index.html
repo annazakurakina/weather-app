@@ -4,19 +4,123 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scr/style.css" />
+
+    <
+    <!-- CSS only -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    />
+    <link rel="stylesheet" href="src/style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/b05d468af7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container"></div>
-    <h1></h1>
-    <a href="" class="btn btn-primary">click me</a>
-    <script src="src/app.js"></script>
+    <div class="container">
+      <div class="main-box">
+        <div class="app">
+          <form id="search-form">
+            <div class="row">
+              <div class="input-group col mb-3 search-field">
+                <input
+                  type="text"
+                  class="form-control search"
+                  placeholder="Find a city"
+                  aria-label="Find a city"
+                  autocomplete="off"
+                  id="search-city"
+                />
+                <button
+                  class="btn search-button"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+              <div class="col-auto pe-0">
+                <button
+                  class="btn current-location"
+                  id="current-location"
+                  type="button"
+                >
+                  Current location
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="row justify-content-between city">
+            <div class="col-auto">
+              <h1>
+                <span class="capitalize" id="city-name"></span>,
+                <span class="country" id="country-name"></span>
+              </h1>
+            </div>
+            <div class="col alight-self-end current-date">
+              <p class="last-updated">Last updated</p>
+              <p id="current-date"></p>
+            </div>
+          </div>
+
+          <div class="row justify-content-between current-weather">
+            <div class="col-sm-6 d-flex flex-column align-self-center">
+              <div class="row">
+                <p
+                  class="capitalize weather-description"
+                  id="weather-description"
+                >
+                  Cloudy
+                </p>
+                <!-- clear wind speed -->
+                <p class="wind">
+                  Wind: <span id="wind-speed"></span>
+                  <span class="wind-units" id="wind-units">m/s</span>
+                </p>
+                <!-- end -->
+                <h2 id="current-temperature"></h2>
+
+                <button class="celcius-button" id="celcius-button">°C</button>
+
+                <br /><button
+                  class="disabled fahrenheit-button"
+                  id="fahrenheit-button"
+                >
+                  °F
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <img
+                src="src/broken-clouds.svg"
+                alt="current weather icon"
+                id="weather-icon"
+              />
+            </div>
+          </div>
+          <div class="forecast" id="forecast"></div>
+        </div>
+        <div class="author">
+          <p>
+            <a
+              href="https://github.com/annazakurakina/weather-app"
+              target="_blank"
+              >Open-source code</a
+            >
+            by Anna Zakurakina
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
